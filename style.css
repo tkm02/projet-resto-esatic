@@ -14,7 +14,6 @@ body {
   overflow-x: hidden;
   font-family: "Outfit", sans-serif;
 }
-
 #home {
   width: 100%;
   height: 100vh;
@@ -59,6 +58,7 @@ nav ul li a {
   text-decoration: none;
   color: #fff;
   padding: 5px;
+  /* font-size: 1.3; */
   transition: background 0.3s ease-in-out;
   border-radius: 5px 5px 0 0;
 }
@@ -145,11 +145,11 @@ nav.scrolled a:hover {
   .footer-row {
     flex-direction: column;
     width: 100%;
-    border: 1px solid;
+    /* border: 1px solid; */
   }
   .footer-col {
     width: 100%;
-    border: 1px solid;
+    /* border: 1px solid; */
   }
   .back-footer {
     flex-direction: column;
@@ -159,13 +159,12 @@ nav.scrolled a:hover {
   .social-icons {
     display: flex;
     flex-direction: row;
-    border: 1px solid;
+    /* border: 1px solid; */
     width: 100%;
     align-items: center;
     justify-content: space-between;
   }
 }
-
 @media screen and (max-width: 1194px) {
   nav {
     width: 100%;
@@ -227,14 +226,12 @@ nav.scrolled a:hover {
   color: #fff;
   border: 1px solid;
 }
-
 #Apropos {
   /* border: 1px solid; */
   display: flex;
   padding: 15px;
   margin: 50px 0;
 }
-
 #Apropos .col {
   /* border: 1px solid; */
   width: 100%;
@@ -258,7 +255,6 @@ nav.scrolled a:hover {
   width: 100%;
   height: auto;
 }
-
 #Menu {
   /* border: 1px solid; */
   display: flex;
@@ -275,27 +271,23 @@ nav.scrolled a:hover {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
 .card {
   position: relative;
-  width: 350px;
+  width: 300px;
   height: 230px;
   border-radius: 15px;
   cursor: pointer;
   overflow: hidden;
   margin: 10px;
 }
-
 .card img {
   width: 100%;
   height: 100%;
-  transition: filter 0.3s ease-in-out; 
+  transition: filter 0.3s ease-in-out;
 }
-
 .card:hover img {
-  filter: blur(2px); 
+  filter: blur(2px);
 }
-
 .text {
   position: absolute;
   top: 50%;
@@ -307,11 +299,9 @@ nav.scrolled a:hover {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-
 .card:hover .text {
   opacity: 1;
 }
-
 #Expert {
   /* border: 1px solid; */
   display: flex;
@@ -360,7 +350,6 @@ nav.scrolled a:hover {
   border-radius: 8px;
   cursor: pointer;
 }
-
 .information-expert h3 {
   font-size: 1rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -381,7 +370,6 @@ nav.scrolled a:hover {
 .reseaux-sociaux i {
   cursor: pointer;
 }
-
 #Temoingnage {
   /* border: 1px solid; */
   display: flex;
@@ -425,7 +413,17 @@ nav.scrolled a:hover {
   font-style: italic;
   color: #666;
 }
-
+#Videos {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 50px 0;
+}
+#Videos video {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
 #Reservation {
   /* border: 1px solid; */
   display: flex;
@@ -440,11 +438,9 @@ nav.scrolled a:hover {
 .form-group {
   margin-bottom: 10px;
 }
-
 label {
   font-weight: 500;
 }
-
 input,
 textarea,
 #Reservation .container-resevation form button {
@@ -476,7 +472,6 @@ textarea,
   cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
-
 #Reservation .container-resevation button:hover {
   background-color: transparent;
   border: 1px solid #e75a08;

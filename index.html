@@ -1,428 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header id="home">
-      <nav>
-        <ul>
-          <li><img src="/images/Logo_TV_2015.png" alt="logo" /></li>
-        </ul>
-        <ul class="navigation">
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#Apropos">À propos</a></li>
-          <li><a href="#Menu">Menu</a></li>
-          <li><a href="#Expert">Expert</a></li>
-          <li><a href="#Temoingnage">Témoignage</a></li>
-          <li><a href="#Reservation">Réservation</a></li>
-        </ul>
-        <ul class="buttons">
-          <li><button>s'inscrire</button></li>
-          <li><button>Se connecter</button></li>
-        </ul>
-        <div class="burger-menu">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-      </nav>
 
-      <div class="contents">
-        <div
-          class="text-welcom"
-          data-aos="fade-right"
-          data-aos-offset="500"
-          data-aos-easing="ease-in-sine"
-        >
-          <h1>
-            Bienvenue dans notre
-            <span style="color: #acea4f; font-style: italic">Restaurant !</span>
-          </h1>
-        </div>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officia
-          impedit error voluptatem assumenda labore? Dolore earum nemo ab
-          nostrum blanditiis totam, voluptates nam magni, hic voluptas possimus
-          asperiores rerum mollitia!
-        </p>
-        <div class="btns">
-          <a href="#Reservation">Reserver une table</a>
-          <a href="#Apropos">Explorer la page</a>
-        </div>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+<style>
+  #map {
+    height: 350px;
+  }
+</style>
 
-    <section id="Apropos">
-      <div
-        class="col"
-        data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="1500"
-      >
-        <h1><span style="color: #acea4f"># </span>A propos</h1>
-        <p>
-          Bienvenue chez
-          <span style="color: #e75a08; font-weight: bold"
-            >La Table Enchantée</span
-          >
-          , un lieu où la gastronomie rencontre la magie pour créer des
-          expériences culinaires inoubliables. Depuis son ouverture en 2010,
-          <span style="color: #e75a08; font-weight: bold"
-            >La Table Enchantée</span
-          >
-          s'est imposée comme une référence incontournable dans le monde de la
-          cuisine créative et raffinée. Fondé par le chef étoilé Antoine Dubois
-          et son épouse Isabelle, ce restaurant est né de leur passion commune
-          pour l'art de bien manger et de recevoir. À
-          <span style="color: #e75a08; font-weight: bold"
-            >La Table Enchantée</span
-          >, chaque plat est une histoire à raconter, une expérience sensorielle
-          à vivre. Notre équipe de chefs talentueux s'inspire des saisons, des
-          produits locaux et des traditions culinaires du monde entier pour
-          créer une cuisine qui éveille les papilles et émerveille les sens.
-        </p>
+<body>
+  <header id="home">
+    <nav>
+      <ul>
+        <li><img src="/images/Logo_TV_2015.png" alt="logo" /></li>
+      </ul>
+      <ul class="navigation">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#Apropos">À propos</a></li>
+        <li><a href="#Menu">Menu</a></li>
+        <li><a href="#Expert">Expert</a></li>
+        <li><a href="#Temoingnage">Témoignage</a></li>
+        <li><a href="#Reservation">Réservation</a></li>
+      </ul>
+      <ul class="buttons">
+        <li><button>s'inscrire</button></li>
+        <li><button>Se connecter</button></li>
+      </ul>
+      <div class="burger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-      <div
-        class="col col-image"
-        data-aos="flip-right"
-        data-aos-easing="linear"
-        data-aos-duration="1500"
-      >
-        <div class="image-apropos">
-            <img src="/images/pexels-chan-walrus-958545.jpg" alt="">
-        </div>
-      </div>
-    </section>
+    </nav>
 
-    <section id="Menu">
-      <h1><span style="color: #acea4f"># </span>Menu</h1>
-      <div class="liste-menu">
-        <div
-          class="card"
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="2000"
-        >
-          <img src="/images/pexels-rajesh-tp-1600727.jpg" alt="Burger" />
-          <div class="text">Burger</div>
-        </div>
-        <div
-          class="card"
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="2000"
-        >
-          <img src="/images/pexels-leonardo-luz-14392119.jpg" alt="Gâteau" />
-          <div class="text">Gâteau</div>
-        </div>
-        <div
-          class="card"
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="2000"
-        >
-          <img src="/images/i136025-pizza-legere.jpeg" alt="Pizza" />
-          <div class="text">Pizza</div>
-        </div>
-        <div
-          class="card"
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="2000"
-        >
-          <img
-            src="/images/Capture d’écran 2024-02-07 180733.jpg"
-            alt="Viande"
-          />
-          <div class="text">Viande</div>
-        </div>
+    <div class="contents">
+      <div class="text-welcom" data-aos="fade-right" data-aos-offset="500" data-aos-easing="ease-in-sine">
+        <h1>
+          Bienvenue dans notre
+          <span style="color: #acea4f; font-style: italic">Restaurant !</span>
+        </h1>
       </div>
-    </section>
-    <section id="Expert">
-      <h1><span style="color: #acea4f"># </span>Nos Experts</h1>
-      <div class="liste-experts">
-        <div class="expert" data-aos="zoom-in-right">
-          <div class="container-image">
-            <img src="/images/Le_Chef_Anto_Afro_cooking.png" alt="" />
-          </div>
-          <div class="information-expert">
-            <h3 class="nom-expert">Kone Kadi</h3>
-            <div class="reseaux-sociaux">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-          </div>
-        </div>
-        <div class="expert" data-aos="zoom-in-right">
-          <div class="container-image">
-            <img src="/images/olivier-700x700.jpg" alt="" />
-          </div>
-          <div class="information-expert">
-            <h3 class="nom-expert">Bamba olivier</h3>
-            <div class="reseaux-sociaux">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-          </div>
-        </div>
-        <div class="expert" data-aos="zoom-in-right">
-          <div class="container-image">
-            <img src="/images/1648190761137.jpeg" alt="" />
-          </div>
-          <div class="information-expert">
-            <h3 class="nom-expert">Tuo Mamadou</h3>
-            <div class="reseaux-sociaux">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-          </div>
-        </div>
-        <div class="expert" data-aos="zoom-in-right">
-          <div class="container-image">
-            <img
-              src="/images/Christian-Yumbi-un-surdoue-de-la-cuisine-au-Congo.jpg"
-              alt=""
-            />
-          </div>
-          <div class="information-expert">
-            <h3 class="nom-expert">Christian Yumbi</h3>
-            <div class="reseaux-sociaux">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-          </div>
-        </div>
+      <p class="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officia
+        impedit error voluptatem assumenda labore? Dolore earum nemo ab
+        nostrum blanditiis totam, voluptates nam magni, hic voluptas possimus
+        asperiores rerum mollitia!
+      </p>
+      <div class="btns">
+        <a href="#Reservation">Reserver une table</a>
+        <a href="#Apropos">Explorer la page</a>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <section id="Temoingnage">
-      <h1><span style="color: #acea4f"># </span>Temoingnages</h1>
-      <div class="liste-temoingnage">
-        <div
-          class="testimonial-card"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-        >
-          <img
-            src="/images/pexels-justin-shaifer-1222271.jpg"
-            alt="Avatar"
-            class="avatar"
-          />
-          <div class="content">
-            <h2 class="name">Justin Shaifer</h2>
-            <p class="quote">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            </p>
-          </div>
+  <section id="Apropos">
+    <div class="col" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+      <h1><span style="color: #acea4f"># </span>A propos</h1>
+      <p>
+        Bienvenue chez
+        <span style="color: #e75a08; font-weight: bold">La Table Enchantée</span>
+        , un lieu où la gastronomie rencontre la magie pour créer des
+        expériences culinaires inoubliables. Depuis son ouverture en 2010,
+        <span style="color: #e75a08; font-weight: bold">La Table Enchantée</span>
+        s'est imposée comme une référence incontournable dans le monde de la
+        cuisine créative et raffinée. Fondé par le chef étoilé Antoine Dubois
+        et son épouse Isabelle, ce restaurant est né de leur passion commune
+        pour l'art de bien manger et de recevoir. À
+        <span style="color: #e75a08; font-weight: bold">La Table Enchantée</span>, chaque plat est une histoire à
+        raconter, une expérience sensorielle
+        à vivre. Notre équipe de chefs talentueux s'inspire des saisons, des
+        produits locaux et des traditions culinaires du monde entier pour
+        créer une cuisine qui éveille les papilles et émerveille les sens.
+      </p>
+    </div>
+    <div class="col col-image" data-aos="flip-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="image-apropos">
+        <img src="/images/pexels-chan-walrus-958545.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <section id="Menu">
+    <h1><span style="color: #acea4f"># </span>Menu</h1>
+    <div class="liste-menu">
+      <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="/images/pexels-rajesh-tp-1600727.jpg" alt="Burger" />
+        <div class="text">Burger</div>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="/images/pexels-leonardo-luz-14392119.jpg" alt="Gâteau" />
+        <div class="text">Gâteau</div>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="/images/i136025-pizza-legere.jpeg" alt="Pizza" />
+        <div class="text">Pizza</div>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="/images/Capture d’écran 2024-02-07 180733.jpg" alt="Viande" />
+        <div class="text">Viande</div>
+      </div>
+    </div>
+  </section>
+  <section id="Expert">
+    <h1><span style="color: #acea4f"># </span>Nos Experts</h1>
+    <div class="liste-experts">
+      <div class="expert" data-aos="zoom-in-right">
+        <div class="container-image">
+          <img src="/images/Le_Chef_Anto_Afro_cooking.png" alt="" />
         </div>
-        <div
-          class="testimonial-card"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-        >
-          <img
-            src="/images/pexels-daniel-xavier-1239291.jpg"
-            alt="Avatar"
-            class="avatar"
-          />
-          <div class="content">
-            <h2 class="name">Doe Daniel</h2>
-            <p class="quote">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            </p>
-          </div>
-        </div>
-        <div
-          class="testimonial-card"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-        >
-          <img
-            src="/images/pexels-hannah-nelson-1065084.jpg"
-            alt="Avatar"
-            class="avatar"
-          />
-          <div class="content">
-            <h2 class="name">Hannah nelson</h2>
-            <p class="quote">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            </p>
-          </div>
-        </div>
-        <div
-          class="testimonial-card"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
-        >
-          <img
-            src="/images/pexels-andrea-piacquadio-733872.jpg"
-            alt="Avatar"
-            class="avatar"
-          />
-          <div class="content">
-            <h2 class="name">Claude Andrea</h2>
-            <p class="quote">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            </p>
+        <div class="information-expert">
+          <h3 class="nom-expert">Kone Kadi</h3>
+          <div class="reseaux-sociaux">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="Reservation">
-      <h1><span style="color: #acea4f"># </span>Reserver une table</h1>
-      <div class="container-resevation">
-        <form action="#" method="POST">
-          <div class="form-group">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Téléphone :</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          <div class="form-group">
-            <label for="date">Date :</label>
-            <input type="date" id="date" name="date" required />
-          </div>
-          <div class="form-group">
-            <label for="time">Heure :</label>
-            <input type="time" id="time" name="time" required />
-          </div>
-          <div class="form-group">
-            <label for="guests">Nombre de personnes :</label>
-            <input type="number" id="guests" name="guests" min="1" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-          </div>
-          <button type="submit">Réserver</button>
-        </form>
-        <div
-          class="image-form-reservation"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-        >
-          <div class="reservation-image">
-            <img src="/images/Le_Chef_Anto_Afro_cooking.png" alt="">
+      <div class="expert" data-aos="zoom-in-right">
+        <div class="container-image">
+          <img src="/images/olivier-700x700.jpg" alt="" />
+        </div>
+        <div class="information-expert">
+          <h3 class="nom-expert">Bamba olivier</h3>
+          <div class="reseaux-sociaux">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
           </div>
         </div>
       </div>
-    </section>
+      <div class="expert" data-aos="zoom-in-right">
+        <div class="container-image">
+          <img src="/images/1648190761137.jpeg" alt="" />
+        </div>
+        <div class="information-expert">
+          <h3 class="nom-expert">Tuo Mamadou</h3>
+          <div class="reseaux-sociaux">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+        </div>
+      </div>
+      <div class="expert" data-aos="zoom-in-right">
+        <div class="container-image">
+          <img src="/images/Christian-Yumbi-un-surdoue-de-la-cuisine-au-Congo.jpg" alt="" />
+        </div>
+        <div class="information-expert">
+          <h3 class="nom-expert">Christian Yumbi</h3>
+          <div class="reseaux-sociaux">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer id="footer">
-      <div class="footer-row">
-        <div class="footer-col">
-          <h4>Notre Histoire</h4>
-          <p>
-            Depuis son ouverture en 2010, La Table Enchantée s'est imposée comme
-            une référence incontournable dans le monde de la cuisine créative et
-            raffinée. Fondé par le chef étoilé Antoine Dubois et son épouse
-            Isabelle, ce restaurant est né de leur passion commune pour l'art de
-            bien manger et de recevoir. À La Table Enchantée, chaque plat est
-            une histoire à raconter, une expérience sensorielle à vivre. Notre
-            équipe de chefs talentueux s'inspire des saisons, des produits
-            locaux et des traditions culinaires du monde entier pour créer une
-            cuisine qui éveille les papilles et émerveille les sens.
+  <section id="Temoingnage">
+    <h1><span style="color: #acea4f"># </span>Temoingnages</h1>
+    <div class="liste-temoingnage">
+      <div class="testimonial-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+        data-aos-offset="0">
+        <img src="/images/pexels-justin-shaifer-1222271.jpg" alt="Avatar" class="avatar" />
+        <div class="content">
+          <h2 class="name">Justin Shaifer</h2>
+          <p class="quote">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua."
           </p>
         </div>
-        <div class="footer-col">
-          <h4>Liens utiles</h4>
-          <ul class="liens">
-            <li><a href="#home">Acceuil</a></li>
-            <li><a href="#Apropos">A propos</a></li>
-            <li><a href="#Menu">Menu</a></li>
-            <li><a href="#Expert">Expert</a></li>
-            <li><a href="#Temoingnage">Temoingnage</a></li>
-            <li><a href="#Reservation">Reservation</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Nos menu</h4>
-          <ul>
-            <li>burgeur</li>
-            <li>Gâteau</li>
-            <li>Pizza</li>
-            <li>Viande</li>
-          </ul>
+      </div>
+      <div class="testimonial-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+        data-aos-offset="0">
+        <img src="/images/pexels-daniel-xavier-1239291.jpg" alt="Avatar" class="avatar" />
+        <div class="content">
+          <h2 class="name">Doe Daniel</h2>
+          <p class="quote">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          </p>
         </div>
       </div>
-      <hr />
+      <div class="testimonial-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+        data-aos-offset="0">
+        <img src="/images/pexels-hannah-nelson-1065084.jpg" alt="Avatar" class="avatar" />
+        <div class="content">
+          <h2 class="name">Hannah nelson</h2>
+          <p class="quote">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          </p>
+        </div>
+      </div>
+      <div class="testimonial-card" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+        data-aos-offset="0">
+        <img src="/images/pexels-andrea-piacquadio-733872.jpg" alt="Avatar" class="avatar" />
+        <div class="content">
+          <h2 class="name">Claude Andrea</h2>
+          <p class="quote">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="Videos">
+    <video autoplay loop>
+      <source src="/prawn_-_11659 (720p).mp4" />
+    </video>
+  </section>
 
-      <div class="footer-row back-footer">
-        <span>Copyright © 2024 All Rights Reserved by TKK.</span>
-        <ul class="social-icons">
-          <li>
-            <a class="facebook" href="#">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a class="twitter" href="#">
-              <i class="fa-brands fa-twitter"></i
-            ></a>
-          </li>
-          <li>
-            <a class="instagram" href="#"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-          </li>
-          <li>
-            <a class="whatsapp" href="#">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-          </li>
+  <section id="Reservation">
+    <h1><span style="color: #acea4f"># </span>Reserver une table</h1>
+    <div class="container-resevation">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone :</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Date :</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Heure :</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <div class="form-group">
+          <label for="guests">Nombre de personnes :</label>
+          <input type="number" id="guests" name="guests" min="1" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Réserver</button>
+      </form>
+      <div class="image-form-reservation" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+        <div class="reservation-image">
+          <img src="/images/Le_Chef_Anto_Afro_cooking.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="map"></div>
+  <footer id="footer">
+    <div class="footer-row">
+      <div class="footer-col">
+        <h4>Notre Histoire</h4>
+        <p>
+          Depuis son ouverture en 2010, La Table Enchantée s'est imposée comme
+          une référence incontournable dans le monde de la cuisine créative et
+          raffinée. Fondé par le chef étoilé Antoine Dubois et son épouse
+          Isabelle, ce restaurant est né de leur passion commune pour l'art de
+          bien manger et de recevoir. À La Table Enchantée, chaque plat est
+          une histoire à raconter, une expérience sensorielle à vivre. Notre
+          équipe de chefs talentueux s'inspire des saisons, des produits
+          locaux et des traditions culinaires du monde entier pour créer une
+          cuisine qui éveille les papilles et émerveille les sens.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Liens utiles</h4>
+        <ul class="liens">
+          <li><a href="#home">Acceuil</a></li>
+          <li><a href="#Apropos">A propos</a></li>
+          <li><a href="#Menu">Menu</a></li>
+          <li><a href="#Expert">Expert</a></li>
+          <li><a href="#Temoingnage">Temoingnage</a></li>
+          <li><a href="#Reservation">Reservation</a></li>
         </ul>
       </div>
-    </footer>
+      <div class="footer-col">
+        <h4>Nos menu</h4>
+        <ul>
+          <li>burgeur</li>
+          <li>Gâteau</li>
+          <li>Pizza</li>
+          <li>Viande</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="/app.js"></script>
-  </body>
+    <div class="footer-row back-footer">
+      <span>Copyright © 2024 All Rights Reserved by TKK.</span>
+      <ul class="social-icons">
+        <li>
+          <a class="facebook" href="#">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a class="twitter" href="#">
+            <i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a class="instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a class="whatsapp" href="#">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="/app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyBUFzTnKUmdADtHiM35l70FpnS6v3K_B-w",
+      authDomain: "calcium-bot-377622.firebaseapp.com",
+      databaseURL: "https://calcium-bot-377622-default-rtdb.firebaseio.com",
+      projectId: "calcium-bot-377622",
+      storageBucket: "calcium-bot-377622.appspot.com",
+      messagingSenderId: "243187500963",
+      appId: "1:243187500963:web:e491e69f8d61c26745bc16"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const map = L.map('map');
+    // Initializes map
+    map.setView([51.505, -0.09], 13);
+    // Sets initial coordinates and zoom level
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    // Sets map data source and associates with map
+    let marker, circle, zoomed;
+    navigator.geolocation.watchPosition(success, error);
+    function success(pos) {
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      set(ref(db, 'position/'), { lat: lat, lng: lng, });
+      console.log(lat, lng)
+
+      const accuracy = pos.coords.accuracy;
+      console.log(lat, lng)
+      if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+      }
+      // Removes any existing marker and circule (new ones about to be set)
+      marker = L.marker([lat, lng]).addTo(map);
+      circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+      // Adds marker to the map and a circle for accuracy
+      if (!zoomed) {
+        zoomed = map.fitBounds(circle.getBounds());
+      }
+      // Set zoom to boundaries of accuracy circle
+      map.setView([lat, lng]);
+      // Set map focus to current user position
+    }
+    function error(err) {
+      if (err.code === 1) {
+        alert("Please allow geolocation access");
+      } else {
+        alert("Cannot get current location");
+      }
+    }
+  </script>
+</body>
+
 </html>
